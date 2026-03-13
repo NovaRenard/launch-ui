@@ -27,7 +27,7 @@ export default function Logos({
   ),
   logos = [
     <Logo key="figma" image={Figma} name="Figma" />,
-    <Logo key="react" image={React} name="React" version="19.2.1" />,
+    <Logo key="react" image={React} name="React" version="19.2.4" />,
     <Logo
       key="typescript"
       image={TypeScript}
@@ -38,10 +38,9 @@ export default function Logos({
       key="shadcn"
       image={ShadcnUi}
       name="Shadcn/ui"
-      version="3.6.3"
-      badge="New"
+      version="4.0.5"
     />,
-    <Logo key="tailwind" image={Tailwind} name="Tailwind" version="4.1.18" />,
+    <Logo key="tailwind" image={Tailwind} name="Tailwind" version="4.2.1" />,
   ],
   className,
 }: LogosProps) {
