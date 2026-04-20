@@ -19,42 +19,33 @@ interface ContactModalProps {
 }
 
 export function ContactModal({ open, onOpenChange }: ContactModalProps) {
-  const [phone, setPhone] = useState("");
+  const [telegram, setTelegram] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const formatPhone = (value: string) => {
-    const cleaned = value.replace(/\D/g, "");
-
-    if (cleaned.length === 0) return "";
-    if (cleaned.length <= 1) return `+${cleaned}`;
-    if (cleaned.length <= 4) return `+${cleaned.slice(0, 1)} (${cleaned.slice(1)}`;
-    if (cleaned.length <= 7) return `+${cleaned.slice(0, 1)} (${cleaned.slice(1, 4)}) ${cleaned.slice(4)}`;
-    if (cleaned.length <= 9) return `+${cleaned.slice(0, 1)} (${cleaned.slice(1, 4)}) ${cleaned.slice(4, 7)}-${cleaned.slice(7)}`;
-    return `+${cleaned.slice(0, 1)} (${cleaned.slice(1, 4)}) ${cleaned.slice(4, 7)}-${cleaned.slice(7, 9)}-${cleaned.slice(9, 11)}`;
-  };
-
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const formatted = formatPhone(e.target.value);
-    setPhone(formatted);
+  const handleTelegramChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value;
+    if (value && !value.startsWith("@")) {
+      value = "@" + value.replace(/^@+/, "");
+    }
+    setTelegram(value);
     if (status === "error") {
       setStatus("idle");
       setErrorMessage("");
     }
   };
 
-  const validatePhone = (phoneValue: string) => {
-    const cleaned = phoneValue.replace(/\D/g, "");
-    return cleaned.length === 11 && cleaned.startsWith("7");
+  const validateTelegram = (telegramValue: string) => {
+    return telegramValue.length >= 6 && telegramValue.startsWith("@");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validatePhone(phone)) {
+    if (!validateTelegram(telegram)) {
       setStatus("error");
-      setErrorMessage("Пожалуйста, введите корректный номер телефона");
+      setErrorMessage("Пожалуйста, введите корректный Telegram (@username)");
       return;
     }
 
@@ -65,7 +56,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
       // TODO: Replace with actual API endpoint
       // For now, just log to console
       console.log("Новая заявка:", {
-        phone,
+        telegram,
         timestamp: new Date().toISOString(),
       });
 
@@ -73,7 +64,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       setStatus("success");
-      setPhone("");
+      setTelegram("");
 
       // Close modal after 2 seconds
       setTimeout(() => {
@@ -91,7 +82,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
   const handleClose = () => {
     if (!isLoading) {
       onOpenChange(false);
-      setPhone("");
+      setTelegram("");
       setStatus("idle");
       setErrorMessage("");
     }
@@ -103,7 +94,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
         <DialogHeader>
           <DialogTitle>Получить консультацию</DialogTitle>
           <DialogDescription>
-            Оставьте свой номер телефона, и мы свяжемся с вами в ближайшее время
+            Оставьте свой Telegram, и мы свяжемся с вами в ближайшее время
           </DialogDescription>
         </DialogHeader>
 
@@ -132,16 +123,16 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="phone">Номер телефона</Label>
+              <Label htmlFor="telegram">Telegram</Label>
               <Input
-                id="phone"
-                type="tel"
-                placeholder="+7 (___) ___-__-__"
-                value={phone}
-                onChange={handlePhoneChange}
+                id="telegram"
+                type="text"
+                placeholder="@username"
+                value={telegram}
+                onChange={handleTelegramChange}
                 disabled={isLoading}
                 className={status === "error" ? "border-red-500" : ""}
-                autoComplete="tel"
+                autoComplete="off"
               />
               {status === "error" && (
                 <p className="text-sm text-red-500">{errorMessage}</p>
@@ -151,7 +142,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
             <Button
               type="submit"
               className="w-full"
-              disabled={isLoading || !phone}
+              disabled={isLoading || !telegram}
             >
               {isLoading ? "Отправка..." : "Отправить заявку"}
             </Button>

@@ -1,7 +1,7 @@
 "use client";
 
 import { type VariantProps } from "class-variance-authority";
-import { Menu, Phone, Mail } from "lucide-react";
+import { Menu } from "lucide-react";
 import { ReactNode, useState } from "react";
 
 import { siteConfig } from "@/config/site";
@@ -45,13 +45,14 @@ interface NavbarProps {
 
 export default function Navbar({
   logo = <LaunchUI />,
-  name = "Aora",
+  name = "Flow AI",
   homeUrl = "#",
   mobileLinks = [
     { text: "Решения", href: "#solution" },
     { text: "Кейсы", href: "#industry-cases" },
     { text: "Тарифы", href: "#pricing" },
     { text: "FAQ", href: "#faq" },
+    { text: "Блог", href: "#blog" },
   ],
   actions = [
     {
@@ -90,18 +91,12 @@ export default function Navbar({
           <NavbarRight>
             <div className="hidden items-center gap-4 md:flex">
               <a
-                href="tel:+77771234567"
+                href="https://t.me/FlowAi_Manager"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm transition-colors"
               >
-                <Phone className="h-4 w-4" />
-                +7 (777) 123-45-67
-              </a>
-              <a
-                href="mailto:info@aora.kz"
-                className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm transition-colors"
-              >
-                <Mail className="h-4 w-4" />
-                info@aora.kz
+                Telegram
               </a>
             </div>
             {actions.map((action, index) =>

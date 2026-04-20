@@ -1,0 +1,149 @@
+<h2>Структура и улучшения лендинга</h2>
+<p class="subtitle">Что оставить, что добавить, что убрать из текущего дизайна</p>
+
+<div class="section" style="background: var(--color-surface); padding: 20px; border-radius: 8px; margin-bottom: 24px;">
+  <h3>Текущая структура:</h3>
+  <ol style="margin-top: 12px; line-height: 2;">
+    <li>Navbar</li>
+    <li>Hero — "AI-агенты для автоматизации продаж"</li>
+    <li>Problem — "Теряете клиентов из-за медленной обработки?"</li>
+    <li>Solution — "Aora решает это с помощью AI-агентов"</li>
+    <li>Items (Services) — "Что входит в наши услуги" (8 карточек)</li>
+    <li>Stats — статистика (сейчас показывает данные шаблона)</li>
+    <li>Pricing — "Начните автоматизацию уже сегодня"</li>
+    <li>FAQ</li>
+    <li>CTA — "Готовы автоматизировать продажи?"</li>
+    <li>Footer</li>
+  </ol>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Минимальные изменения</h3>
+      <p><strong>Что делаем:</strong> Обновляем контент, добавляем отраслевые кейсы в Items, меняем Pricing на пакеты</p>
+      <div style="margin-top: 16px; padding: 16px; background: #f9fafb; border-radius: 6px; font-size: 14px;">
+        <strong>Структура:</strong><br>
+        1. Navbar<br>
+        2. Hero (без изменений)<br>
+        3. Problem (без изменений)<br>
+        4. Solution (без изменений)<br>
+        5. <span style="background: #fef3c7; padding: 2px 6px; border-radius: 3px;">Items → добавить отраслевые примеры</span><br>
+        6. <span style="background: #fef3c7; padding: 2px 6px; border-radius: 3px;">Stats → обновить на реальные цифры</span><br>
+        7. <span style="background: #fef3c7; padding: 2px 6px; border-radius: 3px;">Pricing → пакетная модель (2 тарифа + CRM)</span><br>
+        8. FAQ<br>
+        9. CTA<br>
+        10. Footer
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>Плюсы</h4>
+          <ul>
+            <li>Быстро реализовать</li>
+            <li>Не ломаем работающую структуру</li>
+            <li>Меньше риска</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Минусы</h4>
+          <ul>
+            <li>Упускаем возможность улучшить UX</li>
+            <li>Нет социальных доказательств</li>
+            <li>Слабая дифференциация по нишам</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Оптимизированная структура (рекомендую)</h3>
+      <p><strong>Что делаем:</strong> Добавляем отраслевые кейсы, социальные доказательства, убираем дублирование</p>
+      <div style="margin-top: 16px; padding: 16px; background: #f9fafb; border-radius: 6px; font-size: 14px;">
+        <strong>Структура:</strong><br>
+        1. Navbar<br>
+        2. Hero (обновить mockup на реальный скриншот агента)<br>
+        3. <span style="background: #dcfce7; padding: 2px 6px; border-radius: 3px;">Social Proof — "Нам доверяют" (логотипы клиентов)</span><br>
+        4. Problem (без изменений)<br>
+        5. Solution (без изменений)<br>
+        6. <span style="background: #dcfce7; padding: 2px 6px; border-radius: 3px;">Industry Cases — "Как это работает в вашей нише"</span><br>
+        7. <span style="background: #fef3c7; padding: 2px 6px; border-radius: 3px;">Items → сократить до 6 ключевых фич</span><br>
+        8. <span style="background: #fee2e2; padding: 2px 6px; border-radius: 3px;">Stats → убрать (или заменить на реальные метрики)</span><br>
+        9. <span style="background: #fef3c7; padding: 2px 6px; border-radius: 3px;">Pricing → 2 пакета + CRM addon</span><br>
+        10. FAQ<br>
+        11. CTA<br>
+        12. Footer
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>Плюсы</h4>
+          <ul>
+            <li>Отраслевые кейсы повышают конверсию</li>
+            <li>Social proof строит доверие</li>
+            <li>Убираем лишнее (Stats без данных)</li>
+            <li>Фокус на ценности, не на фичах</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Минусы</h4>
+          <ul>
+            <li>Нужен контент для кейсов</li>
+            <li>Нужны логотипы клиентов</li>
+            <li>Чуть больше работы</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Полная переработка</h3>
+      <p><strong>Что делаем:</strong> Современная структура с акцентом на результаты, кейсы, testimonials</p>
+      <div style="margin-top: 16px; padding: 16px; background: #f9fafb; border-radius: 6px; font-size: 14px;">
+        <strong>Структура:</strong><br>
+        1. Navbar<br>
+        2. Hero + Video demo<br>
+        3. <span style="background: #dcfce7; padding: 2px 6px; border-radius: 3px;">Social Proof (логотипы)</span><br>
+        4. <span style="background: #dcfce7; padding: 2px 6px; border-radius: 3px;">Results — "Результаты наших клиентов" (метрики)</span><br>
+        5. Problem → Solution (объединить в одну секцию)<br>
+        6. <span style="background: #dcfce7; padding: 2px 6px; border-radius: 3px;">How It Works — пошаговый процесс</span><br>
+        7. <span style="background: #dcfce7; padding: 2px 6px; border-radius: 3px;">Industry Cases (4 ниши с примерами)</span><br>
+        8. <span style="background: #dcfce7; padding: 2px 6px; border-radius: 3px;">Testimonials — отзывы клиентов</span><br>
+        9. Features (6 ключевых)<br>
+        10. Pricing (2-3 пакета)<br>
+        11. FAQ<br>
+        12. CTA<br>
+        13. Footer
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>Плюсы</h4>
+          <ul>
+            <li>Максимальная конверсия</li>
+            <li>Современный B2B SaaS стандарт</li>
+            <li>Сильные социальные доказательства</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Минусы</h4>
+          <ul>
+            <li>Много контента нужно создать</li>
+            <li>Долгая разработка</li>
+            <li>Нужны реальные кейсы и отзывы</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 40px; padding: 20px; background: var(--color-surface); border-radius: 8px;">
+  <h3 style="margin-bottom: 12px;">Мой совет</h3>
+  <p>Рекомендую <strong>вариант B</strong> — оптимизированная структура. Это баланс между скоростью реализации и эффективностью. Вы добавляете критически важные элементы (отраслевые кейсы, social proof), убираете лишнее (Stats без данных), но не перегружаете себя созданием контента как в варианте C.</p>
+  <p style="margin-top: 8px;">Вариант C — идеал, но требует много готового контента (отзывы, кейсы, метрики). Можно начать с B и эволюционировать в C по мере роста.</p>
+</div>

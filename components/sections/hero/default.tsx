@@ -40,7 +40,7 @@ export default function Hero({
     <Screenshot
       srcLight="/dashboard-light.png"
       srcDark="/dashboard-dark.png"
-      alt="Launch UI app screenshot"
+      alt="Flow AI app screenshot"
       width={1248}
       height={765}
       className="w-full"
@@ -147,5 +147,6 @@ export default function Hero({
         </div>
       </div>
     </Section>
+  </>
   );
 }

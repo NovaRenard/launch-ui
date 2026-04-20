@@ -35,7 +35,7 @@ interface FooterProps {
 
 export default function FooterSection({
   logo = <LaunchUI />,
-  name = "Aora",
+  name = "Flow AI",
   columns = [
     {
       title: "Навигация",
@@ -44,30 +44,21 @@ export default function FooterSection({
         { text: "Кейсы", href: "#industry-cases" },
         { text: "Тарифы", href: "#pricing" },
         { text: "FAQ", href: "#faq" },
+        { text: "Блог", href: "#blog" },
       ],
     },
     {
       title: "Контакты",
       links: [
-        { text: "+7 (777) 123-45-67", href: "tel:+77771234567" },
-        { text: "info@aora.kz", href: "mailto:info@aora.kz" },
-        { text: "Алматы, Казахстан", href: "#" },
-      ],
-    },
-    {
-      title: "Соцсети",
-      links: [
-        { text: "WhatsApp", href: "https://wa.me/77771234567" },
-        { text: "Telegram", href: "https://t.me/aora_kz" },
-        { text: "Instagram", href: "#" },
+        { text: "Telegram", href: "https://t.me/FlowAi_Manager" },
+        { text: "Telegram канал", href: "https://t.me/Floww_Ai" },
       ],
     },
   ],
-  copyright = "© 2026 Aora. Все права защищены",
+  copyright = "© 2026 Flow AI. Все права защищены",
   policies = [
-    { text: "Политика конфиденциальности", href: "#" },
-    { text: "Договор оферты", href: "#" },
-    { text: "ИИН/БИН: 123456789012", href: "#" },
+    { text: "Privacy Policy", href: "#privacy" },
+    { text: "Terms of Service", href: "#terms" },
   ],
   showModeToggle = true,
   className,
@@ -83,7 +74,7 @@ export default function FooterSection({
                 <h3 className="text-xl font-bold">{name}</h3>
               </div>
               <p className="text-muted-foreground text-sm mt-2">
-                AI-агенты для автоматизации продаж в Казахстане
+                AI-агенты для автоматизации продаж в России
               </p>
             </FooterColumn>
             {columns.map((column, index) => (

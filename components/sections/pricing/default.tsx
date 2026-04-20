@@ -26,7 +26,7 @@ export default function Pricing({
       icon: <User className="size-4" />,
       description: "Для небольших команд и стартапов",
       price: 65000,
-      priceNote: "Настройка 65,000 ₸ + 5,000 ₸/мес",
+      priceNote: "Настройка 65,000 ₽ + 5,000 ₽/мес",
       cta: {
         variant: "default",
         label: "Начать",
@@ -47,7 +47,7 @@ export default function Pricing({
       description: "Для растущих компаний",
       price: 75000,
       promotionText: "Рекомендуем",
-      priceNote: "Настройка 75,000 ₸ + 12,000 ₸/мес",
+      priceNote: "Настройка 75,000 ₽ + 12,000 ₽/мес",
       cta: {
         variant: "glow",
         label: "Выбрать",
@@ -92,7 +92,7 @@ export default function Pricing({
         )}
         {plans !== false && plans.length > 0 && (
           <>
-            <div className="max-w-container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
               {plans.map((plan) => (
                 <PricingColumn
                   key={plan.name}
@@ -107,7 +107,7 @@ export default function Pricing({
                   features={plan.features}
                   variant={plan.variant}
                   className={plan.className}
-                  currency="₸"
+                  currency="₽"
                   period="настройка"
                 />
               ))}
@@ -117,7 +117,7 @@ export default function Pricing({
               <p className="text-muted-foreground mb-4">
                 Адаптируем CRM под ваши бизнес-процессы
               </p>
-              <p className="text-2xl font-bold">+55,000 ₸ <span className="text-muted-foreground text-base font-normal">(разовая настройка)</span></p>
+              <p className="text-2xl font-bold">+55,000 ₽ <span className="text-muted-foreground text-base font-normal">(разовая настройка)</span></p>
             </div>
           </>
         )}

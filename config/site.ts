@@ -1,15 +1,14 @@
 export const siteConfig = {
-  name: "Launch UI",
-  url: "https://launchuicomponents.com",
+  name: "Flow AI",
+  url: "https://flowai.com",
   getStartedUrl:
-    "https://launchuicomponents.com/docs/getting-started/introduction",
-  ogImage: "https://launchuicomponents.com/og.jpg",
+    "https://flowai.com/docs/getting-started/introduction",
+  ogImage: "https://flowai.com/og.jpg",
   description:
-    "Landing page components built with React, Shadcn/ui and Tailwind that will make your website feel premium.",
+    "AI-агенты для автоматизации продаж и бизнес-процессов",
   links: {
-    twitter: "https://twitter.com/mikolajdobrucki",
-    github: "https://github.com/launch-ui/launch-ui",
-    email: "mailto:contact@mikolajdobrucki.com",
+    telegram: "https://t.me/FlowAi_Manager",
+    telegramChannel: "https://t.me/Floww_Ai",
   },
   pricing: {
     pro: "https://launchui.lemonsqueezy.com/buy/b4798c68-c858-4c34-860b-069b5a0d6c4e",

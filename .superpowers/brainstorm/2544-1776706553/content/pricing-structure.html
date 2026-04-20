@@ -1,0 +1,139 @@
+<h2>Структура ценообразования</h2>
+<p class="subtitle">Как лучше представить pricing на лендинге?</p>
+
+<div class="section" style="background: var(--color-surface); padding: 20px; border-radius: 8px; margin-bottom: 24px;">
+  <h3>Что мы знаем:</h3>
+  <ul style="margin-top: 12px; line-height: 1.8;">
+    <li><strong>AI-агент:</strong> 60-80 тыс. руб (настройка + интеграция с мессенджером)</li>
+    <li><strong>Кастомная CRM:</strong> 50-60 тыс. руб (можно отдельно без агента)</li>
+    <li><strong>Хостинг:</strong> ~1,050 руб/мес (35 руб × 30 дней)</li>
+    <li><strong>Переписки:</strong> ~12 руб за 30 диалогов (0.4 руб × 30)</li>
+    <li><strong>Итого recurring:</strong> ~1,062 руб/мес при 30 диалогах или ~13,200 руб/мес при 1000 диалогов</li>
+  </ul>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Прозрачная модель с разбивкой</h3>
+      <p><strong>Показываем:</strong> Отдельно setup fee (60-80k) + ежемесячные расходы (от 1k до 15k в зависимости от объема)</p>
+      <div class="mockup" style="margin-top: 16px; padding: 16px; background: white; border: 1px solid #e5e7eb; border-radius: 8px;">
+        <div style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">AI-агент</div>
+        <div style="font-size: 32px; font-weight: 600; margin-bottom: 4px;">60,000 ₸</div>
+        <div style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">разовая настройка</div>
+        <div style="border-top: 1px solid #e5e7eb; padding-top: 12px; font-size: 14px;">
+          <div style="margin-bottom: 4px;">+ от 1,000 ₸/мес (хостинг + до 30 диалогов)</div>
+          <div style="color: #6b7280;">Масштабируется с ростом бизнеса</div>
+        </div>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>Плюсы</h4>
+          <ul>
+            <li>Честность и прозрачность</li>
+            <li>Клиент понимает полную стоимость</li>
+            <li>Нет сюрпризов потом</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Минусы</h4>
+          <ul>
+            <li>Может отпугнуть recurring платежами</li>
+            <li>Сложнее воспринимается</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Пакетная модель (рекомендую)</h3>
+      <p><strong>Показываем:</strong> Готовые пакеты с включенным объемом диалогов. Проще для восприятия</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+        <div class="mockup" style="padding: 16px; background: white; border: 1px solid #e5e7eb; border-radius: 8px;">
+          <div style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">Старт</div>
+          <div style="font-size: 28px; font-weight: 600; margin-bottom: 4px;">65,000 ₸</div>
+          <div style="font-size: 12px; color: #6b7280; margin-bottom: 12px;">внедрение</div>
+          <div style="font-size: 14px; font-weight: 500; margin-bottom: 8px;">+ 5,000 ₸/мес</div>
+          <div style="font-size: 12px; color: #6b7280; line-height: 1.6;">
+            • До 500 диалогов/мес<br>
+            • WhatsApp/Telegram<br>
+            • Базовая аналитика
+          </div>
+        </div>
+        <div class="mockup" style="padding: 16px; background: white; border: 2px solid #3b82f6; border-radius: 8px;">
+          <div style="font-size: 14px; color: #3b82f6; margin-bottom: 8px;">Бизнес</div>
+          <div style="font-size: 28px; font-weight: 600; margin-bottom: 4px;">75,000 ₸</div>
+          <div style="font-size: 12px; color: #6b7280; margin-bottom: 12px;">внедрение</div>
+          <div style="font-size: 14px; font-weight: 500; margin-bottom: 8px;">+ 12,000 ₸/мес</div>
+          <div style="font-size: 12px; color: #6b7280; line-height: 1.6;">
+            • До 2000 диалогов/мес<br>
+            • Приоритетная поддержка<br>
+            • Расширенная аналитика
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 12px; padding: 12px; background: #f9fafb; border-radius: 6px; font-size: 13px; color: #6b7280;">
+        + Кастомная CRM: 55,000 ₸ (опционально)
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>Плюсы</h4>
+          <ul>
+            <li>Проще выбрать</li>
+            <li>Понятная ценность</li>
+            <li>Стандарт для SaaS B2B</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Минусы</h4>
+          <ul>
+            <li>Нужно угадать правильные лимиты</li>
+            <li>Может не подойти всем</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Консультационный подход</h3>
+      <p><strong>Показываем:</strong> "От 60,000 ₸" + кнопка "Рассчитать стоимость". Pricing формируется индивидуально</p>
+      <div class="mockup" style="margin-top: 16px; padding: 24px; background: white; border: 1px solid #e5e7eb; border-radius: 8px; text-align: center;">
+        <div style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">Внедрение AI-агента</div>
+        <div style="font-size: 36px; font-weight: 600; margin-bottom: 8px;">от 60,000 ₸</div>
+        <div style="font-size: 14px; color: #6b7280; margin-bottom: 20px;">Финальная стоимость зависит от ваших задач</div>
+        <button class="mock-button" style="padding: 12px 24px; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 500;">Получить расчет</button>
+      </div>
+      <div class="pros-cons" style="margin-top: 12px;">
+        <div class="pros">
+          <h4>Плюсы</h4>
+          <ul>
+            <li>Гибкость в переговорах</li>
+            <li>Не отпугиваем ценой</li>
+            <li>Больше лидов на консультацию</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Минусы</h4>
+          <ul>
+            <li>Меньше прозрачности</li>
+            <li>Клиент не понимает полную стоимость</li>
+            <li>Больше некачественных лидов</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 40px; padding: 20px; background: var(--color-surface); border-radius: 8px;">
+  <h3 style="margin-bottom: 12px;">Мой совет</h3>
+  <p>Для B2B с разными нишами рекомендую <strong>вариант B (пакетная модель)</strong>. Это стандарт для SaaS, клиенты привыкли к такой структуре. Вы можете предложить 2-3 пакета с разными лимитами диалогов, а CRM показать как опциональное дополнение.</p>
+  <p style="margin-top: 8px;">Если хотите больше гибкости и готовы работать с каждым клиентом индивидуально — выбирайте вариант C.</p>
+</div>
