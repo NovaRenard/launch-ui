@@ -94,7 +94,7 @@ export default function Pricing({
             )}
           </div>
         )}
-        {finalPlans !== false && finalPlans.length > 0 && (
+        {finalPlans.length > 0 && (
           <>
             <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
               {finalPlans.map((plan) => (
