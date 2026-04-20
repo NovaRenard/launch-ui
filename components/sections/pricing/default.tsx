@@ -20,7 +20,12 @@ interface PricingProps {
 export default function Pricing({
   title = "Выберите подходящий тариф",
   description = "Все тарифы включают настройку, интеграцию с мессенджерами и техподдержку",
-  plans = [
+  plans,
+  className = "",
+}: PricingProps) {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const defaultPlans: PricingColumnProps[] = [
     {
       name: "Старт",
       icon: <User className="size-4" />,
@@ -63,10 +68,9 @@ export default function Pricing({
       ],
       variant: "glow-brand",
     },
-  ],
-  className = "",
-}: PricingProps) {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  ];
+
+  const finalPlans = plans || defaultPlans;
 
   return (
     <>
@@ -90,10 +94,10 @@ export default function Pricing({
             )}
           </div>
         )}
-        {plans !== false && plans.length > 0 && (
+        {finalPlans !== false && finalPlans.length > 0 && (
           <>
             <div className="mx-auto grid w-full max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
-              {plans.map((plan) => (
+              {finalPlans.map((plan) => (
                 <PricingColumn
                   key={plan.name}
                   name={plan.name}
