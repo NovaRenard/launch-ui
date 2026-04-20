@@ -34,10 +34,13 @@ export interface PricingColumnProps
   originalPrice?: number;
   promotionText?: ReactNode;
   priceNote: string;
+  currency?: string;
+  period?: string;
   cta: {
     variant: "glow" | "default";
     label: string;
     href: string;
+    onClick?: () => void;
   };
   features: string[];
 }
@@ -54,6 +57,8 @@ export function PricingColumn({
   features,
   variant,
   className,
+  currency = "$",
+  period = "one-time payment",
   ...props
 }: PricingColumnProps) {
   return (
@@ -95,15 +100,15 @@ export function PricingColumn({
             <div className="flex flex-col gap-1">
               <div className="flex items-baseline gap-1">
                 <span className="text-muted-foreground text-2xl font-bold">
-                  $
+                  {currency}
                 </span>
-                <span className="text-6xl font-bold">{price}</span>
+                <span className="text-6xl font-bold">{price.toLocaleString()}</span>
               </div>
             </div>
             <div className="flex min-h-[40px] flex-col">
               {price > 0 && (
                 <>
-                  <span className="text-sm">one-time payment</span>
+                  <span className="text-sm">{period}</span>
                   <span className="text-muted-foreground text-sm">
                     plus local taxes
                   </span>
@@ -117,8 +122,17 @@ export function PricingColumn({
             </div>
           )}
         </section>
-        <Button variant={cta.variant} size="lg" asChild>
-          <Link href={cta.href}>{cta.label}</Link>
+        <Button
+          variant={cta.variant}
+          size="lg"
+          onClick={cta.onClick}
+          asChild={!cta.onClick}
+        >
+          {cta.onClick ? (
+            cta.label
+          ) : (
+            <Link href={cta.href}>{cta.label}</Link>
+          )}
         </Button>
         <p className="text-muted-foreground min-h-[40px] max-w-[220px] text-sm">
           {priceNote}

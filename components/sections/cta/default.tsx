@@ -1,5 +1,7 @@
+"use client";
+
 import { type VariantProps } from "class-variance-authority";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -7,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "../../ui/button";
 import Glow from "../../ui/glow";
 import { Section } from "../../ui/section";
+import { ContactModal } from "../../ui/contact-modal";
 
 interface CTAButtonProps {
   href: string;
@@ -23,18 +26,25 @@ interface CTAProps {
 }
 
 export default function CTA({
-  title = "Start building",
+  title = "Готовы автоматизировать продажи?",
   buttons = [
     {
-      href: siteConfig.getStartedUrl,
-      text: "Get Started",
+      href: "#pricing",
+      text: "Записаться на консультацию",
       variant: "default",
     },
   ],
   className,
 }: CTAProps) {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   return (
-    <Section className={cn("group relative overflow-hidden", className)}>
+    <>
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
+      <Section className={cn("group relative overflow-hidden", className)}>
       <div className="max-w-container relative z-10 mx-auto flex flex-col items-center gap-6 text-center sm:gap-8">
         <h2 className="max-w-[640px] text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
           {title}
@@ -46,13 +56,11 @@ export default function CTA({
                 key={index}
                 variant={button.variant || "default"}
                 size="lg"
-                asChild
+                onClick={() => setIsContactModalOpen(true)}
               >
-                <a href={button.href}>
-                  {button.icon}
-                  {button.text}
-                  {button.iconRight}
-                </a>
+                {button.icon}
+                {button.text}
+                {button.iconRight}
               </Button>
             ))}
           </div>

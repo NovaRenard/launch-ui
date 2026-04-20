@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -34,36 +35,39 @@ interface FooterProps {
 
 export default function FooterSection({
   logo = <LaunchUI />,
-  name = "Launch UI",
+  name = "Aora",
   columns = [
     {
-      title: "Product",
+      title: "Навигация",
       links: [
-        { text: "Changelog", href: siteConfig.url },
-        { text: "Documentation", href: siteConfig.url },
+        { text: "Решения", href: "#solution" },
+        { text: "Кейсы", href: "#industry-cases" },
+        { text: "Тарифы", href: "#pricing" },
+        { text: "FAQ", href: "#faq" },
       ],
     },
     {
-      title: "Company",
+      title: "Контакты",
       links: [
-        { text: "About", href: siteConfig.url },
-        { text: "Careers", href: siteConfig.url },
-        { text: "Blog", href: siteConfig.url },
+        { text: "+7 (777) 123-45-67", href: "tel:+77771234567" },
+        { text: "info@aora.kz", href: "mailto:info@aora.kz" },
+        { text: "Алматы, Казахстан", href: "#" },
       ],
     },
     {
-      title: "Contact",
+      title: "Соцсети",
       links: [
-        { text: "Discord", href: siteConfig.url },
-        { text: "Twitter", href: siteConfig.url },
-        { text: "Github", href: siteConfig.links.github },
+        { text: "WhatsApp", href: "https://wa.me/77771234567" },
+        { text: "Telegram", href: "https://t.me/aora_kz" },
+        { text: "Instagram", href: "#" },
       ],
     },
   ],
-  copyright = "© 2025 Mikołaj Dobrucki. All rights reserved",
+  copyright = "© 2026 Aora. Все права защищены",
   policies = [
-    { text: "Privacy Policy", href: siteConfig.url },
-    { text: "Terms of Service", href: siteConfig.url },
+    { text: "Политика конфиденциальности", href: "#" },
+    { text: "Договор оферты", href: "#" },
+    { text: "ИИН/БИН: 123456789012", href: "#" },
   ],
   showModeToggle = true,
   className,
@@ -78,6 +82,9 @@ export default function FooterSection({
                 {logo}
                 <h3 className="text-xl font-bold">{name}</h3>
               </div>
+              <p className="text-muted-foreground text-sm mt-2">
+                AI-агенты для автоматизации продаж в Казахстане
+              </p>
             </FooterColumn>
             {columns.map((column, index) => (
               <FooterColumn key={index}>
@@ -86,7 +93,7 @@ export default function FooterSection({
                   <a
                     key={linkIndex}
                     href={link.href}
-                    className="text-muted-foreground text-sm"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                   >
                     {link.text}
                   </a>
@@ -96,9 +103,13 @@ export default function FooterSection({
           </FooterContent>
           <FooterBottom>
             <div>{copyright}</div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               {policies.map((policy, index) => (
-                <a key={index} href={policy.href}>
+                <a
+                  key={index}
+                  href={policy.href}
+                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                >
                   {policy.text}
                 </a>
               ))}

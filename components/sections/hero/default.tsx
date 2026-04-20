@@ -1,6 +1,8 @@
+"use client";
+
 import { type VariantProps } from "class-variance-authority";
 import { ArrowRightIcon } from "lucide-react";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -12,6 +14,7 @@ import Glow from "../../ui/glow";
 import { Mockup, MockupFrame } from "../../ui/mockup";
 import Screenshot from "../../ui/screenshot";
 import { Section } from "../../ui/section";
+import { ContactModal } from "../../ui/contact-modal";
 
 interface HeroButtonProps {
   href: string;
@@ -31,8 +34,8 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = "Give your big idea the design it deserves",
-  description = "Professionally designed blocks and templates built with React, Shadcn/ui and Tailwind that will help your product stand out.",
+  title = "AI-агенты для автоматизации продаж",
+  description = "Обрабатывайте заявки 24/7 и увеличивайте продажи без найма новых сотрудников",
   mockup = (
     <Screenshot
       srcLight="/dashboard-light.png"
@@ -46,31 +49,37 @@ export default function Hero({
   badge = (
     <Badge variant="outline" className="animate-appear">
       <span className="text-muted-foreground">
-        New version of Launch UI is out!
+        AI automation для вашего бизнеса
       </span>
-      <a href={siteConfig.getStartedUrl} className="flex items-center gap-1">
-        Get started
+      <a href="#solution" className="flex items-center gap-1">
+        Узнать больше
         <ArrowRightIcon className="size-3" />
       </a>
     </Badge>
   ),
   buttons = [
     {
-      href: siteConfig.getStartedUrl,
-      text: "Get Started",
+      href: "#pricing",
+      text: "Получить консультацию",
       variant: "default",
     },
     {
-      href: siteConfig.links.github,
-      text: "Github",
+      href: "#industry-cases",
+      text: "Посмотреть кейсы",
       variant: "glow",
-      icon: <Github className="mr-2 size-4" />,
     },
   ],
   className,
 }: HeroProps) {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   return (
-    <Section
+    <>
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
+      <Section
       className={cn(
         "fade-bottom overflow-hidden pb-0 sm:pb-0 md:pb-0",
         className,
@@ -92,13 +101,26 @@ export default function Hero({
                   key={index}
                   variant={button.variant || "default"}
                   size="lg"
-                  asChild
+                  onClick={
+                    index === 0
+                      ? () => setIsContactModalOpen(true)
+                      : undefined
+                  }
+                  asChild={index !== 0}
                 >
-                  <a href={button.href}>
-                    {button.icon}
-                    {button.text}
-                    {button.iconRight}
-                  </a>
+                  {index === 0 ? (
+                    <>
+                      {button.icon}
+                      {button.text}
+                      {button.iconRight}
+                    </>
+                  ) : (
+                    <a href={button.href}>
+                      {button.icon}
+                      {button.text}
+                      {button.iconRight}
+                    </a>
+                  )}
                 </Button>
               ))}
             </div>

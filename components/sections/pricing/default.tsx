@@ -1,10 +1,14 @@
+"use client";
+
 import { User, Users } from "lucide-react";
+import { useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 import { PricingColumn, PricingColumnProps } from "../../ui/pricing-column";
 import { Section } from "../../ui/section";
+import { ContactModal } from "../../ui/contact-modal";
 
 interface PricingProps {
   title?: string | false;
@@ -14,67 +18,63 @@ interface PricingProps {
 }
 
 export default function Pricing({
-  title = "Build your dream landing page, today.",
-  description = "Get lifetime access to all the components. No recurring fees. Just simple, transparent pricing.",
+  title = "Выберите подходящий тариф",
+  description = "Все тарифы включают настройку, интеграцию с мессенджерами и техподдержку",
   plans = [
     {
-      name: "Free",
-      description: "For everyone starting out on a website for their big idea",
-      price: 0,
-      priceNote: "Free and open-source forever. Get started now.",
+      name: "Старт",
+      icon: <User className="size-4" />,
+      description: "Для небольших команд и стартапов",
+      price: 65000,
+      priceNote: "Настройка 65,000 ₸ + 5,000 ₸/мес",
       cta: {
-        variant: "glow",
-        label: "Get started for free",
-        href: "/docs/getting-started/introduction",
+        variant: "default",
+        label: "Начать",
+        href: "#cta",
+        onClick: () => setIsContactModalOpen(true),
       },
       features: [
-        "1 website template",
-        "9 blocks and sections",
-        "4 custom animations",
+        "До 500 диалогов/мес",
+        "Интеграция WhatsApp или Telegram (на выбор)",
+        "Базовая аналитика",
+        "Email поддержка",
       ],
       variant: "default",
-      className: "hidden lg:flex",
     },
     {
-      name: "Pro",
-      icon: <User className="size-4" />,
-      description: "For early-stage founders, solopreneurs and indie devs",
-      price: 99,
-      priceNote: "Lifetime access. Free updates. No recurring fees.",
+      name: "Бизнес",
+      icon: <Users className="size-4" />,
+      description: "Для растущих компаний",
+      price: 75000,
+      promotionText: "Рекомендуем",
+      priceNote: "Настройка 75,000 ₸ + 12,000 ₸/мес",
       cta: {
-        variant: "default",
-        label: "Get all-access",
-        href: siteConfig.pricing.pro,
+        variant: "glow",
+        label: "Выбрать",
+        href: "#cta",
+        onClick: () => setIsContactModalOpen(true),
       },
       features: [
-        `${siteConfig.stats.templates} templates`,
-        `${siteConfig.stats.sections} blocks and sections`,
-        `${siteConfig.stats.illustrations} illustrations`,
-        `${siteConfig.stats.animations} custom animations`,
+        "До 2000 диалогов/мес",
+        "Интеграция WhatsApp + Telegram (оба)",
+        "Расширенная аналитика",
+        "Приоритетная поддержка",
+        "Обучение команды",
       ],
       variant: "glow-brand",
-    },
-    {
-      name: "Pro Team",
-      icon: <Users className="size-4" />,
-      description: "For teams and agencies working on cool products together",
-      price: 499,
-      priceNote: "Lifetime access. Free updates. No recurring fees.",
-      cta: {
-        variant: "default",
-        label: "Get all-access for your team",
-        href: siteConfig.pricing.team,
-      },
-      features: [
-        "All the templates, components and sections available for your entire team",
-      ],
-      variant: "glow",
     },
   ],
   className = "",
 }: PricingProps) {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   return (
-    <Section className={cn(className)}>
+    <>
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
+      <Section className={cn(className)}>
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-12">
         {(title || description) && (
           <div className="flex flex-col items-center gap-4 px-4 text-center sm:gap-8">
@@ -91,24 +91,35 @@ export default function Pricing({
           </div>
         )}
         {plans !== false && plans.length > 0 && (
-          <div className="max-w-container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {plans.map((plan) => (
-              <PricingColumn
-                key={plan.name}
-                name={plan.name}
-                icon={plan.icon}
-                description={plan.description}
-                price={plan.price}
-                originalPrice={plan.originalPrice}
-                promotionText={plan.promotionText}
-                priceNote={plan.priceNote}
-                cta={plan.cta}
-                features={plan.features}
-                variant={plan.variant}
-                className={plan.className}
-              />
-            ))}
-          </div>
+          <>
+            <div className="max-w-container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {plans.map((plan) => (
+                <PricingColumn
+                  key={plan.name}
+                  name={plan.name}
+                  icon={plan.icon}
+                  description={plan.description}
+                  price={plan.price}
+                  originalPrice={plan.originalPrice}
+                  promotionText={plan.promotionText}
+                  priceNote={plan.priceNote}
+                  cta={plan.cta}
+                  features={plan.features}
+                  variant={plan.variant}
+                  className={plan.className}
+                  currency="₸"
+                  period="настройка"
+                />
+              ))}
+            </div>
+            <div className="glass-1 dark:glass-3 max-w-2xl rounded-2xl p-6 text-center">
+              <h3 className="mb-2 text-xl font-semibold">Кастомная CRM</h3>
+              <p className="text-muted-foreground mb-4">
+                Адаптируем CRM под ваши бизнес-процессы
+              </p>
+              <p className="text-2xl font-bold">+55,000 ₸ <span className="text-muted-foreground text-base font-normal">(разовая настройка)</span></p>
+            </div>
+          </>
         )}
       </div>
     </Section>

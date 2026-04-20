@@ -1,12 +1,10 @@
 import {
-  BlocksIcon,
   EclipseIcon,
   FastForwardIcon,
   LanguagesIcon,
   MonitorSmartphoneIcon,
   RocketIcon,
   ScanFaceIcon,
-  SquarePenIcon,
 } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -26,50 +24,37 @@ interface ItemsProps {
 }
 
 export default function Items({
-  title = "Everything you need. Nothing you don't.",
+  title = "Что входит в наши услуги",
   items = [
     {
-      title: "Accessibility first",
-      description: "Fully WCAG 2.0 compliant, made with best a11y practices",
+      title: "Квалификация лидов",
+      description: "AI-агент оценивает намерение клиента и приоритизирует горячие лиды",
       icon: <ScanFaceIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Responsive design",
-      description: "Looks and works great on any device and screen size",
-      icon: <MonitorSmartphoneIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "Light and dark mode",
-      description:
-        "Seamless switching between color schemes, 6 themes included",
-      icon: <EclipseIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "Easy to customize",
-      description: "Flexible options to match your product or brand",
-      icon: <BlocksIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "Top-level performance",
-      description: "Made for lightning-fast load times and smooth interactions",
-      icon: <FastForwardIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "Production ready",
-      description: "Thoroughly tested and launch-prepared",
+      title: "Проактивные CTA",
+      description: "Мягко подталкивает клиента к действию, не дожидаясь вопросов",
       icon: <RocketIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Made for localisation",
-      description:
-        "Easy to implement support for multiple languages and regions",
+      title: "Booking Flow",
+      description: "Запись на встречу или консультацию прямо в чате",
+      icon: <MonitorSmartphoneIcon className="size-5 stroke-1" />,
+    },
+    {
+      title: "Re-engagement",
+      description: "Возвращает 'думающих' клиентов к принятию решения",
+      icon: <FastForwardIcon className="size-5 stroke-1" />,
+    },
+    {
+      title: "WhatsApp / Telegram",
+      description: "Работает в мессенджерах, где уже общаются ваши клиенты",
       icon: <LanguagesIcon className="size-5 stroke-1" />,
     },
     {
-      title: "CMS friendly",
-      description:
-        "Built to work with your any headless content management system",
-      icon: <SquarePenIcon className="size-5 stroke-1" />,
+      title: "24/7 поддержка",
+      description: "AI-агент работает круглосуточно без выходных",
+      icon: <EclipseIcon className="size-5 stroke-1" />,
     },
   ],
   className,

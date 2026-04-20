@@ -1,6 +1,8 @@
+"use client";
+
 import { type VariantProps } from "class-variance-authority";
-import { Menu } from "lucide-react";
-import { ReactNode } from "react";
+import { Menu, Phone, Mail } from "lucide-react";
+import { ReactNode, useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -14,6 +16,7 @@ import {
 } from "../../ui/navbar";
 import Navigation from "../../ui/navigation";
 import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
+import { ContactModal } from "../../ui/contact-modal";
 
 interface NavbarLink {
   text: string;
@@ -42,18 +45,18 @@ interface NavbarProps {
 
 export default function Navbar({
   logo = <LaunchUI />,
-  name = "Launch UI",
-  homeUrl = siteConfig.url,
+  name = "Aora",
+  homeUrl = "#",
   mobileLinks = [
-    { text: "Getting Started", href: siteConfig.url },
-    { text: "Components", href: siteConfig.url },
-    { text: "Documentation", href: siteConfig.url },
+    { text: "Решения", href: "#solution" },
+    { text: "Кейсы", href: "#industry-cases" },
+    { text: "Тарифы", href: "#pricing" },
+    { text: "FAQ", href: "#faq" },
   ],
   actions = [
-    { text: "Sign in", href: siteConfig.url, isButton: false },
     {
-      text: "Get Started",
-      href: siteConfig.url,
+      text: "Получить консультацию",
+      href: "#",
       isButton: true,
       variant: "default",
     },
@@ -62,7 +65,14 @@ export default function Navbar({
   customNavigation,
   className,
 }: NavbarProps) {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   return (
+    <>
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
     <header className={cn("sticky top-0 z-50 -mb-4 px-4 pb-4", className)}>
       <div className="fade-bottom bg-background/15 absolute left-0 h-24 w-full backdrop-blur-lg"></div>
       <div className="max-w-container relative mx-auto">
@@ -78,18 +88,32 @@ export default function Navbar({
             {showNavigation && (customNavigation || <Navigation />)}
           </NavbarLeft>
           <NavbarRight>
+            <div className="hidden items-center gap-4 md:flex">
+              <a
+                href="tel:+77771234567"
+                className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm transition-colors"
+              >
+                <Phone className="h-4 w-4" />
+                +7 (777) 123-45-67
+              </a>
+              <a
+                href="mailto:info@aora.kz"
+                className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm transition-colors"
+              >
+                <Mail className="h-4 w-4" />
+                info@aora.kz
+              </a>
+            </div>
             {actions.map((action, index) =>
               action.isButton ? (
                 <Button
                   key={index}
                   variant={action.variant || "default"}
-                  asChild
+                  onClick={() => setIsContactModalOpen(true)}
                 >
-                  <a href={action.href}>
-                    {action.icon}
-                    {action.text}
-                    {action.iconRight}
-                  </a>
+                  {action.icon}
+                  {action.text}
+                  {action.iconRight}
                 </Button>
               ) : (
                 <a
