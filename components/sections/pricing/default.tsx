@@ -123,5 +123,6 @@ export default function Pricing({
         )}
       </div>
     </Section>
+    </>
   );
 }

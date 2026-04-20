@@ -70,5 +70,6 @@ export default function CTA({
         <Glow variant="bottom" />
       </div>
     </Section>
+    </>
   );
 }

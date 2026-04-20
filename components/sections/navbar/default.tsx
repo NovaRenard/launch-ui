@@ -160,5 +160,6 @@ export default function Navbar({
         </NavbarComponent>
       </div>
     </header>
+    </>
   );
 }
