@@ -31,7 +31,7 @@ export default function Pricing({
       icon: <User className="size-4" />,
       description: "Для небольших команд и стартапов",
       price: 65000,
-      priceNote: "Настройка 65,000 ₽ + 5,000 ₽/мес",
+      priceNote: "Настройка 65,000 ₽ + 500 ₽/мес",
       cta: {
         variant: "default",
         label: "Начать",
@@ -52,7 +52,7 @@ export default function Pricing({
       description: "Для растущих компаний",
       price: 75000,
       promotionText: "Рекомендуем",
-      priceNote: "Настройка 75,000 ₽ + 12,000 ₽/мес",
+      priceNote: "Настройка 75,000 ₽ + 1,200 ₽/мес",
       cta: {
         variant: "glow",
         label: "Выбрать",

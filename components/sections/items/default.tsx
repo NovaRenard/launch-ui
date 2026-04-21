@@ -66,7 +66,7 @@ export default function Items({
           {title}
         </h2>
         {items !== false && items.length > 0 && (
-          <div className="grid auto-rows-fr grid-cols-2 gap-0 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+          <div className="grid auto-rows-fr grid-cols-2 gap-0 sm:grid-cols-3 sm:gap-4">
             {items.map((item, index) => (
               <Item key={index}>
                 <ItemTitle className="flex items-center gap-2">

@@ -41,10 +41,16 @@ export default function FooterSection({
       title: "Навигация",
       links: [
         { text: "Решения", href: "#solution" },
-        { text: "Кейсы", href: "#industry-cases" },
         { text: "Тарифы", href: "#pricing" },
         { text: "FAQ", href: "#faq" },
-        { text: "Блог", href: "#blog" },
+      ],
+    },
+    {
+      title: "Компания",
+      links: [
+        { text: "О нас", href: "/about" },
+        { text: "Кейсы", href: "/cases" },
+        { text: "Блог", href: "/blog" },
       ],
     },
     {
@@ -57,8 +63,8 @@ export default function FooterSection({
   ],
   copyright = "© 2026 Flow AI. Все права защищены",
   policies = [
-    { text: "Privacy Policy", href: "#privacy" },
-    { text: "Terms of Service", href: "#terms" },
+    { text: "Политика конфиденциальности", href: "/privacy" },
+    { text: "Условия использования", href: "/terms" },
   ],
   showModeToggle = true,
   className,

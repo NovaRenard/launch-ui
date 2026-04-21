@@ -50,17 +50,17 @@ export default function Navigation({
     {
       title: "Блог",
       isLink: true,
-      href: "#blog",
+      href: "/blog",
     },
     {
       title: "Кейсы",
       isLink: true,
-      href: "#cases",
+      href: "/cases",
     },
     {
       title: "О нас",
       isLink: true,
-      href: "#about",
+      href: "/about",
     },
   ],
   components = [

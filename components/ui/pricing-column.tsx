@@ -102,7 +102,7 @@ export function PricingColumn({
                 <span className="text-muted-foreground text-2xl font-bold">
                   {currency}
                 </span>
-                <span className="text-6xl font-bold">{price.toLocaleString()}</span>
+                <span className="text-6xl font-bold">{price.toLocaleString("ru-RU")}</span>
               </div>
             </div>
             <div className="flex min-h-[40px] flex-col">
@@ -110,7 +110,7 @@ export function PricingColumn({
                 <>
                   <span className="text-sm">{period}</span>
                   <span className="text-muted-foreground text-sm">
-                    plus local taxes
+                    единоразово
                   </span>
                 </>
               )}

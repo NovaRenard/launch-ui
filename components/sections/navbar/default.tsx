@@ -46,13 +46,14 @@ interface NavbarProps {
 export default function Navbar({
   logo = <LaunchUI />,
   name = "Flow AI",
-  homeUrl = "#",
+  homeUrl = "/",
   mobileLinks = [
     { text: "Решения", href: "#solution" },
-    { text: "Кейсы", href: "#industry-cases" },
+    { text: "Кейсы", href: "/cases" },
     { text: "Тарифы", href: "#pricing" },
     { text: "FAQ", href: "#faq" },
-    { text: "Блог", href: "#blog" },
+    { text: "Блог", href: "/blog" },
+    { text: "О нас", href: "/about" },
   ],
   actions = [
     {
