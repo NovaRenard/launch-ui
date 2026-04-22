@@ -97,7 +97,7 @@ export default function Navbar({
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm transition-colors"
               >
-                MAX
+                Telegram
               </a>
             </div>
             {actions.map((action, index) =>

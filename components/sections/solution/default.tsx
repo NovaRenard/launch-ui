@@ -28,7 +28,7 @@ export default function Solution({
     },
     {
       title: "Автозапись на встречу",
-      description: "Запись на встречу или консультацию прямо в MAX",
+      description: "Запись на встречу или консультацию прямо в мессенджере",
       icon: <MessageSquare className="size-5 stroke-1" />,
     },
     {

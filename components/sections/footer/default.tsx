@@ -55,8 +55,8 @@ export default function FooterSection({
     {
       title: "Контакты",
       links: [
-        { text: "MAX", href: "https://t.me/FlowAi_Manager" },
-        { text: "MAX канал", href: "https://t.me/Floww_Ai" },
+        { text: "Telegram", href: "https://t.me/FlowAi_Manager" },
+        { text: "Telegram канал", href: "https://t.me/Floww_Ai" },
       ],
     },
   ],

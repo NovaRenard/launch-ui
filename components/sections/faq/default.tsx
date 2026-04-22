@@ -68,7 +68,7 @@ export default function FAQ({
       question: "Какие мессенджеры поддерживаются?",
       answer: (
         <p className="text-muted-foreground mb-4 max-w-[640px]">
-          MAX. Интеграция с другими мессенджерами — по запросу
+          Мессенджеры, такие как MAX и Telegram. Интеграция с другими мессенджерами — по запросу
         </p>
       ),
     },

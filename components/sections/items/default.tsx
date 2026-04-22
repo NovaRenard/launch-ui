@@ -38,7 +38,7 @@ export default function Items({
     },
     {
       title: "Автозапись на встречу",
-      description: "Записывает клиента на встречу или консультацию прямо в MAX",
+      description: "Записывает клиента на встречу или консультацию прямо в мессенджере",
       icon: <MonitorSmartphoneIcon className="size-5 stroke-1" />,
     },
     {
@@ -47,8 +47,8 @@ export default function Items({
       icon: <FastForwardIcon className="size-5 stroke-1" />,
     },
     {
-      title: "MAX",
-      description: "Работает в MAX, где уже общаются ваши клиенты",
+      title: "Мессенджеры",
+      description: "Работает в мессенджерах, таких как MAX и Telegram, где уже общаются ваши клиенты",
       icon: <LanguagesIcon className="size-5 stroke-1" />,
     },
     {

@@ -45,7 +45,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
 
     if (!validateTelegram(telegram)) {
       setStatus("error");
-      setErrorMessage("Пожалуйста, введите корректный MAX (@username)");
+      setErrorMessage("Пожалуйста, введите корректный никнейм в мессенджере (@username)");
       return;
     }
 
@@ -94,7 +94,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
         <DialogHeader>
           <DialogTitle>Получить консультацию</DialogTitle>
           <DialogDescription>
-            Оставьте свой MAX, и мы свяжемся с вами в ближайшее время
+            Оставьте свой контакт в мессенджере, и мы свяжемся с вами в ближайшее время
           </DialogDescription>
         </DialogHeader>
 
@@ -123,7 +123,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="telegram">MAX</Label>
+              <Label htmlFor="telegram">Мессенджер</Label>
               <Input
                 id="telegram"
                 type="text"
