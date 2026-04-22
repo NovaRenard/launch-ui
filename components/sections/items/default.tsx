@@ -37,18 +37,18 @@ export default function Items({
       icon: <RocketIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Booking Flow",
-      description: "Запись на встречу или консультацию прямо в чате",
+      title: "Автозапись на встречу",
+      description: "Записывает клиента на встречу или консультацию прямо в MAX",
       icon: <MonitorSmartphoneIcon className="size-5 stroke-1" />,
     },
     {
-      title: "Re-engagement",
-      description: "Возвращает 'думающих' клиентов к принятию решения",
+      title: "Возврат сомневающихся клиентов",
+      description: "Возвращает клиентов, которые пока выбирают, к следующему шагу",
       icon: <FastForwardIcon className="size-5 stroke-1" />,
     },
     {
-      title: "WhatsApp / Telegram",
-      description: "Работает в мессенджерах, где уже общаются ваши клиенты",
+      title: "MAX",
+      description: "Работает в MAX, где уже общаются ваши клиенты",
       icon: <LanguagesIcon className="size-5 stroke-1" />,
     },
     {

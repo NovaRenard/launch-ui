@@ -45,7 +45,7 @@ interface NavbarProps {
 
 export default function Navbar({
   logo = <LaunchUI />,
-  name = "Flow AI",
+  name = siteConfig.name,
   homeUrl = "/",
   mobileLinks = [
     { text: "Решения", href: "#solution" },
@@ -97,7 +97,7 @@ export default function Navbar({
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm transition-colors"
               >
-                Telegram
+                MAX
               </a>
             </div>
             {actions.map((action, index) =>

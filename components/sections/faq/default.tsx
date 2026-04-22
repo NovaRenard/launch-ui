@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 
-import { siteConfig } from "@/config/site";
-
 import {
   Accordion,
   AccordionContent,
@@ -70,7 +68,7 @@ export default function FAQ({
       question: "Какие мессенджеры поддерживаются?",
       answer: (
         <p className="text-muted-foreground mb-4 max-w-[640px]">
-          WhatsApp и Telegram. Интеграция с другими мессенджерами — по запросу
+          MAX. Интеграция с другими мессенджерами — по запросу
         </p>
       ),
     },

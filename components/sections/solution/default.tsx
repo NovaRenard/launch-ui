@@ -18,7 +18,7 @@ interface SolutionProps {
 }
 
 export default function Solution({
-  title = "Aora решает это с помощью AI-агентов",
+  title = "FlowAI решает это с помощью AI-агентов",
   description = "Автоматизируйте продажи и обработку заявок без найма новых сотрудников",
   items = [
     {
@@ -27,8 +27,8 @@ export default function Solution({
       icon: <Bot className="size-5 stroke-1" />,
     },
     {
-      title: "Автоматическая запись",
-      description: "Бронирование встреч и консультаций прямо в чате WhatsApp/Telegram",
+      title: "Автозапись на встречу",
+      description: "Запись на встречу или консультацию прямо в MAX",
       icon: <MessageSquare className="size-5 stroke-1" />,
     },
     {

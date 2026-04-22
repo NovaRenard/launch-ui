@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Flow AI",
+  name: "FlowAI",
   url: "https://flowai.com",
   getStartedUrl:
     "https://flowai.com/docs/getting-started/introduction",

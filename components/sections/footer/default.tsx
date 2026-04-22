@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { Phone, Mail, MapPin } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -35,7 +34,7 @@ interface FooterProps {
 
 export default function FooterSection({
   logo = <LaunchUI />,
-  name = "Flow AI",
+  name = siteConfig.name,
   columns = [
     {
       title: "Навигация",
@@ -56,12 +55,12 @@ export default function FooterSection({
     {
       title: "Контакты",
       links: [
-        { text: "Telegram", href: "https://t.me/FlowAi_Manager" },
-        { text: "Telegram канал", href: "https://t.me/Floww_Ai" },
+        { text: "MAX", href: "https://t.me/FlowAi_Manager" },
+        { text: "MAX канал", href: "https://t.me/Floww_Ai" },
       ],
     },
   ],
-  copyright = "© 2026 Flow AI. Все права защищены",
+  copyright = `© 2026 ${siteConfig.name}. Все права защищены`,
   policies = [
     { text: "Политика конфиденциальности", href: "/privacy" },
     { text: "Условия использования", href: "/terms" },

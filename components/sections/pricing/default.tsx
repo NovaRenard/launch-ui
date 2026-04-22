@@ -3,7 +3,6 @@
 import { User, Users } from "lucide-react";
 import { useState } from "react";
 
-import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 import { PricingColumn, PricingColumnProps } from "../../ui/pricing-column";
@@ -19,7 +18,7 @@ interface PricingProps {
 
 export default function Pricing({
   title = "Выберите подходящий тариф",
-  description = "Все тарифы включают настройку, интеграцию с мессенджерами и техподдержку",
+  description = "Все тарифы включают настройку, интеграцию с MAX и техподдержку",
   plans,
   className = "",
 }: PricingProps) {
@@ -40,7 +39,7 @@ export default function Pricing({
       },
       features: [
         "До 500 диалогов/мес",
-        "Интеграция WhatsApp или Telegram (на выбор)",
+        "Интеграция с MAX",
         "Базовая аналитика",
         "Email поддержка",
       ],
@@ -61,7 +60,7 @@ export default function Pricing({
       },
       features: [
         "До 2000 диалогов/мес",
-        "Интеграция WhatsApp + Telegram (оба)",
+        "Интеграция с MAX",
         "Расширенная аналитика",
         "Приоритетная поддержка",
         "Обучение команды",

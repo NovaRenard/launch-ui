@@ -19,7 +19,7 @@ interface ProblemProps {
 
 export default function Problem({
   title = "Теряете клиентов из-за медленной обработки заявок?",
-  description = "Знакомые проблемы малого и среднего бизнеса в Казахстане",
+  description = "Знакомые проблемы малого и среднего бизнеса в России",
   items = [
     {
       title: "Потеря лидов",

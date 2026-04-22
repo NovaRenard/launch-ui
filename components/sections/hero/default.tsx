@@ -4,7 +4,6 @@ import { type VariantProps } from "class-variance-authority";
 import { ArrowRightIcon } from "lucide-react";
 import { ReactNode, useState } from "react";
 
-import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 import Github from "../../logos/github";
@@ -40,7 +39,7 @@ export default function Hero({
     <Screenshot
       srcLight="/dashboard-light.png"
       srcDark="/dashboard-dark.png"
-      alt="Flow AI app screenshot"
+      alt="FlowAI app screenshot"
       width={1248}
       height={765}
       className="w-full"
